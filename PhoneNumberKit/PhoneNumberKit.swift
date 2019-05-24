@@ -20,6 +20,11 @@ public final class PhoneNumberKit: NSObject {
     let parseManager: ParseManager
     let regexManager = RegexManager()
 
+    public static let `default`: PhoneNumberKit = {
+        let instance = PhoneNumberKit()
+        return instance
+    }()
+
     // MARK: Lifecycle
     public init(metadataCallback: @escaping MetadataCallback = PhoneNumberKit.defaultMetadataCallback) {
        self.metadataManager = MetadataManager(metadataCallback: metadataCallback)
